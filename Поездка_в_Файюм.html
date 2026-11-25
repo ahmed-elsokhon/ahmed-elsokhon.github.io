@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b12">
+<meta name="description" content="KHEVRAX trip experience in Fayoum: Wadi El Rayan and Tunis Village, November 27, 2026.">
+<title>KHEVRAX | Поездка в Файюм</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #080b12;
+    --blue: #168cff;
+    --red: #e63946;
+    --white: #f5f7fb;
+    --muted: #8993a5;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at 50% 10%, #102644 0%, transparent 55%), var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .12;
+    background-image:
+      linear-gradient(#ffffff0a 1px, transparent 1px),
+      linear-gradient(90deg, #ffffff0a 1px, transparent 1px);
+    background-size: 45px 45px;
+    z-index: 0;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #ffffff15;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.logo span { color: var(--blue); }
+
+.header-label {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+main {
+    text-align: center;
+    padding: 85px 0 70px;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid #168cff55;
+    background: #168cff12;
+    padding: 10px 18px;
+    border-radius: 30px;
+    color: #6db8ff;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    background: #32e89b;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #32e89b;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(35px, 8vw, 78px);
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 1.2;
+}
+
+h1 span {
+    color: var(--blue);
+    text-shadow: 0 0 35px #168cff55;
+}
+
+.subtitle {
+    color: var(--muted);
+    margin-top: 22px;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.destination {
+    color: #d7e8ff;
+    margin-top: 12px;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.divider {
+    width: 65px;
+    height: 3px;
+    margin: 38px auto;
+    background: linear-gradient(90deg, var(--blue), var(--red));
+}
+
+.countdown-title {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: #aab5c6;
+    margin-bottom: 25px;
+}
+
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 760px;
+    margin: auto;
+}
+
+.time-box {
+    padding: 30px 10px;
+    border: 1px solid #ffffff18;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #ffffff0c, #ffffff03);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 45px #00000030;
+}
+
+.number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(30px, 6vw, 55px);
+    font-weight: 700;
+    color: var(--white);
+    font-variant-numeric: tabular-nums;
+}
+
+.unit {
+    color: var(--blue);
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 12px;
+}
+
+.event-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.detail {
+    border: 1px solid #ffffff18;
+    background: #ffffff08;
+    padding: 17px 25px;
+    border-radius: 9px;
+    color: #c2cad6;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.detail strong {
+    color: white;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.message {
+    margin-top: 35px;
+    color: #8c9aae;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+section {
+    padding: 65px 0;
+    border-top: 1px solid #ffffff12;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(23px, 5vw, 34px);
+    letter-spacing: 3px;
+}
+
+.section-heading h2 span { color: var(--blue); }
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 13px;
+}
+
+
+
+.itinerary {
+    max-width: 850px;
+    margin: auto;
+    position: relative;
+}
+
+.itinerary::before {
+    content: "";
+    position: absolute;
+    left: 23px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--blue), #168cff35, var(--red));
+}
+
+.itinerary-item {
+    position: relative;
+    padding-left: 65px;
+    margin-bottom: 25px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 13px;
+    top: 22px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--blue);
+    box-shadow: 0 0 15px #168cff77;
+    z-index: 1;
+}
+
+.timeline-dot.red {
+    border-color: var(--red);
+    box-shadow: 0 0 15px #e6394677;
+}
+
+.itinerary-card {
+    border: 1px solid #ffffff17;
+    border-radius: 13px;
+    background: linear-gradient(120deg, #ffffff0c, #ffffff03);
+    padding: 23px;
+    transition: .3s;
+}
+
+.itinerary-card:hover {
+    border-color: #168cff77;
+    transform: translateY(-3px);
+}
+
+.itinerary-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.itinerary-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #9daabd;
+}
+
+.itinerary-card .tag {
+    display: inline-block;
+    color: var(--blue);
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.activity-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 17px;
+}
+
+.activity-list span {
+    background: #168cff12;
+    border: 1px solid #168cff30;
+    color: #8bc5ff;
+    padding: 8px 11px;
+    border-radius: 6px;
+    font-size: 10px;
+    letter-spacing: .5px;
+}
+
+
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+}
+
+.activity-card {
+    min-height: 175px;
+    padding: 25px 20px;
+    border: 1px solid #ffffff17;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #ffffff0d, #ffffff03);
+    transition: .3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue);
+    box-shadow: 0 12px 35px #168cff15;
+}
+
+.activity-icon {
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.activity-card h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+    letter-spacing: .5px;
+}
+
+.activity-card p {
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+
+
+.poster-section {
+    padding: 65px 0 75px;
+    border-top: 1px solid #ffffff12;
+    text-align: center;
+}
+
+.poster-frame {
+    width: min(650px, 100%);
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #168cff55;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #168cff20, #ffffff05, #e6394620);
+    box-shadow: 0 20px 65px #00000055, 0 0 35px #168cff12;
+}
+
+.poster-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+}
+
+
+
+footer {
+    border-top: 1px solid #ffffff15;
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: #667185;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+footer strong { color: var(--blue); }
+
+
+
+@media(max-width: 700px) {
+    main { padding: 70px 0 60px; }
+
+    .countdown {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .time-box { padding: 25px 8px; }
+
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .activity-card {
+        padding: 20px 14px;
+        min-height: 165px;
+    }
+
+    .logo { font-size: 18px; }
+    .header-label { font-size: 8px; }
+    .subtitle { font-size: 10px; letter-spacing: 2px; }
+
+    .itinerary-item { padding-left: 50px; }
+    .itinerary::before { left: 18px; }
+    .timeline-dot { left: 8px; }
+    .itinerary-card { padding: 18px; }
+
+    .poster-section { padding: 50px 0 60px; }
+    .poster-frame { padding: 6px; border-radius: 12px; }
+
+    footer {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media(max-width: 380px) {
+    .activities-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+    <div class="logo">KHEVR<span>AX</span></div>
+    <div class="header-label">SOFTWARE COMPANY</div>
+</header>
+
+<main>
+    <div class="status">
+        <span class="dot"></span>
+        UPCOMING EVENT
+    </div>
+
+    <h1>Поездка в<br><span>Файюм</span></h1>
+
+    <p class="subtitle">A JOURNEY BEYOND THE ORDINARY</p>
+    <p class="destination">WADI EL RAYAN & TUNIS VILLAGE</p>
+
+    <div class="divider"></div>
+
+    <p class="countdown-title">THE COUNTDOWN BEGINS</p>
+
+    <div class="countdown" role="timer" aria-label="Time remaining until the trip">
+        <div class="time-box">
+            <div class="number" id="days">00</div>
+            <div class="unit">DAYS</div>
+        </div>
+        <div class="time-box">
+            <div class="number" id="hours">00</div>
+            <div class="unit">HOURS</div>
+        </div>
+        <div class="time-box">
+            <div class="number" id="minutes">00</div>
+            <div class="unit">MINUTES</div>
+        </div>
+        <div class="time-box">
+            <div class="number" id="seconds">00</div>
+            <div class="unit">SECONDS</div>
+        </div>
+    </div>
+
+    <div class="event-details">
+        <div class="detail">
+            <strong>FRIDAY</strong>
+            DAY OF THE WEEK
+        </div>
+        <div class="detail">
+            <strong>NOVEMBER 27, 2026</strong>
+            EVENT DATE
+        </div>
+        <div class="detail">
+            <strong>09:00 AM</strong>
+            DEPARTURE TIME
+        </div>
+    </div>
+
+    <p class="message" id="message">
+        THE EXPERIENCE IS GETTING CLOSER.
+    </p>
+</main>
+
+<section id="itinerary">
+    <div class="section-heading">
+        <h2>TRIP <span>ITINERARY</span></h2>
+        <p>DISCOVER THE EXPERIENCE</p>
+    </div>
+
+    <div class="itinerary">
+        <div class="itinerary-item">
+            <div class="timeline-dot"></div>
+            <div class="itinerary-card">
+                <span class="tag">09:00 AM — DEPARTURE</span>
+                <h3>JOURNEY BEGINS</h3>
+                <p>التجمع والتحرك إلى الفيوم.</p>
+            </div>
+        </div>
+
+        <div class="itinerary-item">
+            <div class="timeline-dot"></div>
+            <div class="itinerary-card">
+                <span class="tag">STOP 01</span>
+                <h3>TUNIS VILLAGE</h3>
+                <p>استراحة الصبح وجولة حرة في أجمل قرية ريفية وفنية في الفيوم.</p>
+            </div>
+        </div>
+
+        <div class="itinerary-item">
+            <div class="timeline-dot"></div>
+            <div class="itinerary-card">
+                <span class="tag">STOP 02</span>
+                <h3>WADI EL RAYAN WATERFALLS</h3>
+                <p>الاستمتاع بمنظر البحيرات والشلالات وسط الطبيعة.</p>
+            </div>
+        </div>
+
+        <div class="itinerary-item">
+            <div class="timeline-dot"></div>
+            <div class="itinerary-card">
+                <span class="tag">STOP 03</span>
+                <h3>SANDBOARDING</h3>
+                <p>التزحلق على الرمال باستخدام البوردات، مع ألعاب شاطئية ومسابقات.</p>
+                <div class="activity-list">
+                    <span>Sandboarding</span>
+                    <span>Tug of War</span>
+                    <span>Rotating Bottle Game</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="itinerary-item">
+            <div class="timeline-dot"></div>
+            <div class="itinerary-card">
+                <span class="tag">STOP 04</span>
+                <h3>GEBEL EL MEDAWARA</h3>
+                <p>تسلق خفيف والاستمتاع بأحلى مشهد بانورامي لوادي الريان.</p>
+            </div>
+        </div>
+
+        <div class="itinerary-item">
+            <div class="timeline-dot red"></div>
+            <div class="itinerary-card">
+                <span class="tag">EVENING ACTIVITIES</span>
+                <h3>TUNIS VILLAGE</h3>
+                <p>ختام اليوم بمجموعة من الأنشطة والتجارب المميزة.</p>
+                <div class="activity-list">
+                    <span>Color Festival</span>
+                    <span>Campfire</span>
+                    <span>Bedouin Charcoal Tea</span>
+                    <span>Marshmallow Roasting</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="activities">
+    <div class="section-heading">
+        <h2>THE <span>EXPERIENCE</span></h2>
+        <p>EXPLORE • ADVENTURE • ENJOY</p>
+    </div>
+
+    <div class="activities-grid">
+        <div class="activity-card">
+            <div class="activity-icon">🏂</div>
+            <h3>SANDBOARDING</h3>
+            <p>Experience the thrill of sliding down the golden sand dunes.</p>
+        </div>
+
+        <div class="activity-card">
+            <div class="activity-icon">🌊</div>
+            <h3>WATERFALLS</h3>
+            <p>Discover the beautiful waterfalls and lakes of Wadi El Rayan.</p>
+        </div>
+
+        <div class="activity-card">
+            <div class="activity-icon">🏜️</div>
+            <h3>DESERT ADVENTURE</h3>
+            <p>Explore the desert landscapes and enjoy the adventure.</p>
+        </div>
+
+        <div class="activity-card">
+            <div class="activity-icon">⛰️</div>
+            <h3>GEBEL EL MEDAWARA</h3>
+            <p>Enjoy a light climb and breathtaking panoramic views.</p>
+        </div>
+
+        <div class="activity-card">
+            <div class="activity-icon">🔥</div>
+            <h3>CAMPFIRE NIGHT</h3>
+            <p>Relax around the fire with charcoal tea and roasted marshmallows.</p>
+        </div>
+
+        <div class="activity-card">
+            <div class="activity-icon">🎨</div>
+            <h3>COLOR FESTIVAL</h3>
+            <p>Celebrate the evening with colors, fun and unforgettable memories.</p>
+        </div>
+
+        <div class="activity-card">
+            <div class="activity-icon">🚤</div>
+            <h3>BOAT TOUR</h3>
+            <p>Enjoy the beauty of the lakes and surrounding nature.</p>
+        </div>
+
+        <div class="activity-card">
+            <div class="activity-icon">🍵</div>
+            <h3>CHARCOAL TEA</h3>
+            <p>Experience traditional Bedouin tea prepared over charcoal.</p>
+        </div>
+
+        <div class="activity-card">
+            <div class="activity-icon">🌿</div>
+            <h3>STUNNING NATURE</h3>
+            <p>Discover the unique natural beauty of Fayoum.</p>
+        </div>
+    </div>
+</section>
+<section class="poster-section" id="trip-poster">
+    <div class="section-heading">
+        <h2>OFFICIAL <span>TRIP POSTER</span></h2>
+        <p>THE ORIGINAL EVENT ANNOUNCEMENT</p>
+    </div>
+
+    <div class="poster-frame">
+        <img
+            src="fayoum-trip-poster.jpg"
+            alt="Official ERU Wadi El Rayan and Fayoum trip poster"
+            loading="lazy"
+        >
+    </div>
+</section>
+
+<footer>
+    <div>POWERED BY <strong>KHEVRAX</strong></div>
+    <div>ENGINEERED BEYOND LIMITS.</div>
+    <div>© 2026 KHEVRAX</div>
+</footer>
+
+</div>
+
+<script>
+const tripDate = new Date("2026-11-27T09:00:00+02:00").getTime();
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+const messageEl = document.getElementById("message");
+
+let countdownTimer;
+
+function updateCountdown() {
+    const remaining = tripDate - Date.now();
+
+    if (remaining <= 0) {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+        secondsEl.textContent = "00";
+        messageEl.textContent = "THE JOURNEY HAS BEGUN.";
+        clearInterval(countdownTimer);
+        return;
+    }
+
+    daysEl.textContent = String(Math.floor(remaining / 86400000)).padStart(2, "0");
+    hoursEl.textContent = String(Math.floor(remaining / 3600000) % 24).padStart(2, "0");
+    minutesEl.textContent = String(Math.floor(remaining / 60000) % 60).padStart(2, "0");
+    secondsEl.textContent = String(Math.floor(remaining / 1000) % 60).padStart(2, "0");
+}
+
+countdownTimer = setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+</body>
+</html>
